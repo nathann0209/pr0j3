@@ -143,16 +143,31 @@ def highlight_outliers(dataX, dataY):
 </pre>
 ### Alternative plotting in plotly.py
 <pre>
-  def nicer_equiv_plot(country, col):
-    fig = px.scatter(x = area_series[country][0].flatten(), y = area_series[country][key_cols.index(col)].flatten(),
-                    title = f"Scatter Plot Joined By Lines For {country} in {col}", template='plotly_dark')
-    #fig = px.line(x = area_series[country][0].flatten(), y = area_series[country][key_cols.index(col)].flatten())
-    # Add a line trace
-    fig.add_trace(go.Scatter(x = area_series[country][0].flatten(), y = area_series[country][key_cols.index(col)].flatten(),
-                             mode='lines+markers', name='Line Plot', hovertemplate='Year: %{x}<br>'+f'{col}: '+ '%{y}<extra></extra>'))
- 
-    # Update the layout with axis names (labels)
-    fig.update_layout(xaxis_title="Year", yaxis_title=f"{col}")
-    # Add a line trace
+ def plot_with_regression_line(country, col):
+    x = area_series[country][0].flatten()
+    y = area_series[country][key_cols.index(col)].flatten()
+    # Compute the Pearson correlation coefficient
+    corr, _ = pearsonr(x, y)
+    
+    # Create a scatter plot with or without a linear regression line
+    if abs(corr) > 0.8:
+        fig = px.scatter(x=x, y=y, labels={'x': 'X', 'y': 'Y'}, trendline='ols')
+    else:
+        fig = px.scatter(x = area_series[country][0].flatten(), y = area_series[country][key_cols.index(col)].flatten())
+        fig.add_trace(go.Scatter(x = area_series[country][0].flatten(), y = area_series[country][key_cols.index(col)].flatten(),
+                             mode='lines+markers'))
+    
+    # Customize the plot
+    fig.update_traces(marker=dict(size=10, color='DarkRed', line=dict(width=2, color='Black')), selector=dict(mode='markers'))
+    fig.update_layout(
+        title = f"Scatter Plot Joined By Lines For {country} in {col}",
+        title_font=dict(size=24, color='DarkBlue'),
+        xaxis=dict(title='Year', gridcolor='lightgray'),
+        yaxis=dict(title=f'{col}', gridcolor='lightgray'),
+        plot_bgcolor='white',
+        margin=dict(l=0, r=0, b=0, t=0)
+    )
+
+    # Show the plot
     fig.show()
 </pre>
