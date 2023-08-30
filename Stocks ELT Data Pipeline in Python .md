@@ -157,3 +157,9 @@ SELECT symbol, record_date, stock_close, AVG(stock_close) OVER (ORDER BY record_
 FROM public.stock2_table
 ORDER BY symbol, record_date;
 </pre>
+
+## Exemplar Visualisations
+- 2022 Candlestick Analysis (https://public.tableau.com/views/proj3book/Sheet2?:language=en-GB&publish=yes&:display_count=n&:origin=viz_share_link)
+- 2022 Close Price Analysis (https://public.tableau.com/views/ClosePriceAnalysis/Sheet3?:language=en-GB&publish=yes&:display_count=n&:origin=viz_share_link)
+- Moving Average Analysis (https://public.tableau.com/shared/MDHT2PM5G?:display_count=n&:origin=viz_share_link)
+  
