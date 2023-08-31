@@ -187,3 +187,6 @@ def highlight_outliers(dataX, dataY):
     # Show the plot
     fig.show()
 </pre>
+## Exemplar Plots
+- Linear Regression Applied Plot: https://nathann0209.github.io/pr0j3/plotly_chart1693504259.html
+- Plot Which Wasn't Suitable For Linear Regression: https://nathann0209.github.io/pr0j3/plotly_chart1693340269.html
