@@ -79,6 +79,22 @@ import plotly.io as pio
         
     df.to_csv("C:\LocalDocs\Summer23\Agrofood_co2_emission.csv", index=False) #write back to file with updated df
 </pre>
+### Adding a 'continent' column with appropriate values for each row
+<pre>
+    def add_continent(df):
+    df_len = len(df)
+    continent_list = []
+    wrong_list = []
+
+    for i in range(df_len):
+        bol = False
+        for continent in continent_dict:
+            if df.loc[i, 'Area'] in continent_dict[continent]:
+                continent_list.append(continent)
+                break
+
+    df['Continent'] = continent_list
+</pre>
 ### Reduce the dataframe to contain only certain "key" columns and group this reduced dataframe by area
 <pre>
   key_cols = ['Year', 'Area','Forest fires', 'Food Household Consumption', 'Agrifood Systems Waste Disposal', 'Fertilizers Manufacturing', 
