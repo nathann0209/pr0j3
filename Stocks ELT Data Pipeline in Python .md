@@ -1,10 +1,10 @@
 # PROJECT: Stocks ELT Data Pipeline in Python 
 ## Summary
-1. Extract data from API Endpoint to temporary storage
-2. Perform data quality/validation checks with Python
-3. Load data to more permanent storage, where it is transformed to be ready for visualisation
-4. Visualise the data in dashboard format
-5. Automate this entire process
+1. Extract data from API Endpoint to temporary storage.
+2. Perform data quality/validation checks with Python.
+3. Load data to more permanent storage, where it is transformed to be ready for visualisation.
+4. Visualise the data in dashboard format.
+5. Automate this entire process.
 ## Motivations
 I took data visualization and storytelling courses during Bristol Data Week 2023, sparking an interest in understanding how companies handle data before creating final visualizations. 
 
