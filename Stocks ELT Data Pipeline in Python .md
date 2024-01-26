@@ -6,14 +6,15 @@
 4. Visualise the data in dashboard format.
 5. Automate this entire process.
 ## Motivations
-I took data visualization and storytelling courses during Bristol Data Week 2023, sparking an interest in understanding how companies handle data before creating final visualizations. 
+I took data visualisation and storytelling courses during Bristol Data Week 2023, sparking an interest in understanding how companies handle data before creating final visualisations. 
 
-The project aims to simulate a real company's process of data extraction, temporary storage, transformation, and visualization, providing insights into industry data processing before end use.
+The project aims to simulate a real company's process of data extraction, temporary storage, transformation, and visualisation, providing insights into industry data processing before end use.
 ## Approach
 - Extract stocks’ open/close data from Polygon.io Stocks API to Amazon S3 bucket (Tech: **Python’s ’requests’ and ’boto3’ libraries**, flattening responses from JSON into a CSV file).
 - Perform data quality/validation checks to reduce data burden (Tech: **Python’s ’pandas’** library).
 - Execute **SQL** queries to load data into a column-based database in **Amazon Redshift Warehouse**.
 - Perform data aggregation and calculated moving averages  in order to optimize a portfolio (Tech: **SQL** queries)
+- Visualise results with interactive dashboards (Tech: **Tableau**)
 - Automate the entire data pipeline, ensuring that the latest stocks data is fetched daily,
 transformed, and stored in the database for further analysis and reporting (Tech: **Apache Airflow**)
 ## Project Description
