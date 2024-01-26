@@ -10,12 +10,12 @@ I took data visualization and storytelling courses during Bristol Data Week 2023
 
 The project aims to simulate a real company's process of data extraction, temporary storage, transformation, and visualization, providing insights into industry data processing before end use.
 ## Approach
-- Extracted up to two years of stocks’ open/close data from Polygon.io Stocks API to Amazon S3 bucket using Python’s ’requests’ and ’boto3’ libraries, flattening responses from JSON into a CSV file.
-- Performed data quality/validation checks with Python’s ’pandas’ library, reducing file size by 23%.
-- Executed SQL queries to load data into a column-based database in Amazon Redshift Warehouse.
-- Performed data aggregation and calculated moving averages using SQL queries in order to optimize a portfolio.
-- Used Apache Airflow to automate the entire data pipeline, ensuring that the latest stocks data is fetched daily,
-transformed, and stored in the database for further analysis and reporting.
+- Extract stocks’ open/close data from Polygon.io Stocks API to Amazon S3 bucket (Tech: **Python’s ’requests’ and ’boto3’ libraries**, flattening responses from JSON into a CSV file).
+- Perform data quality/validation checks to reduce data burden (Tech: **Python’s ’pandas’** library).
+- Execute **SQL** queries to load data into a column-based database in **Amazon Redshift Warehouse**.
+- Perform data aggregation and calculated moving averages  in order to optimize a portfolio (Tech: **SQL** queries)
+- Automate the entire data pipeline, ensuring that the latest stocks data is fetched daily,
+transformed, and stored in the database for further analysis and reporting (Tech: **Apache Airflow**)
 ## Project Description
 ### Data Source - Polygon.io REST API:
 ![image](https://github.com/nathann0209/pr0j3/assets/141504383/9bca0a17-6410-49cc-81d9-f1f78e15ce64)
