@@ -1,5 +1,15 @@
 # PROJECT: Stocks ELT Data Pipeline in Python 
 ## Summary
+1. Extract data from API Endpoint to temporary storage
+2. Perform data quality/validation checks with Python
+3. Load data to more permanent storage, where it is transformed to be ready for visualisation
+4. Visualise the data in dashboard format
+5. Automate this entire process
+## Motivations
+I took data visualization and storytelling courses during Bristol Data Week 2023, sparking an interest in understanding how companies handle data before creating final visualizations. 
+
+The project aims to simulate a real company's process of data extraction, temporary storage, transformation, and visualization, providing insights into industry data processing before end use.
+## Approach
 - Extracted up to two years of stocks’ open/close data from Polygon.io Stocks API to Amazon S3 bucket using Python’s ’requests’ and ’boto3’ libraries, flattening responses from JSON into a CSV file.
 - Performed data quality/validation checks with Python’s ’pandas’ library, reducing file size by 23%.
 - Executed SQL queries to load data into a column-based database in Amazon Redshift Warehouse.
